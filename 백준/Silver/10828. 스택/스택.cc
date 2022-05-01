@@ -39,7 +39,7 @@ int main(void) {
         }
         else if (str == "empty") {    //empty 명령어 일때. 
 
-            if (st.empty()) {
+            if (st.empty()==true) {
                 cout << "1" << endl;
             }
             else {
