@@ -3,8 +3,6 @@
 using namespace std;
 
 int main() {
-
-
 	int T;
 	cin >> T;
 
@@ -12,27 +10,24 @@ int main() {
 		string s;
 		cin >> s;
 
-		if (s.find("()") == string::npos) {
-			cout << "NO" << "\n";
+	
+
+
+		while (s.find("()") != string::npos) { //()가 없을때까지	
+			s = regex_replace(s, regex("\\(\\)"), "");
+
+			
+		}
+
+		if (s == "") {
+			cout << "YES" << "\n";
+
 		}
 		else {
+			cout << "NO" << "\n";
 
-			string str1;
-			while (s.find("()") != string::npos) { //()가 없을때까지	
-				str1 = regex_replace(s, regex("\\(\\)"), "");
-				s = str1;
-				//cout << s << "\n";
-			}
-
-			if (str1 == "") {
-				cout << "YES" << "\n";
-
-			}
-			else {
-				cout << "NO" << "\n";
-
-			}
 		}
+
 
 
 	}
