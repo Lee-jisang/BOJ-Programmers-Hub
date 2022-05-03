@@ -10,28 +10,14 @@ int main() {
 		string s;
 		cin >> s;
 
-	
-
-
-		while (s.find("()") != string::npos) { //()가 없을때까지	
+		while (s.find("()") != string::npos)  //()가 없을때까지	
 			s = regex_replace(s, regex("\\(\\)"), "");
 
-			
-		}
-
-		if (s == "") {
-			cout << "YES" << "\n";
-
-		}
-		else {
+		if (s == "") 
+			cout << "YES" << "\n";	
+		else 
 			cout << "NO" << "\n";
-
-		}
-
-
-
 	}
-
 
 }
 
