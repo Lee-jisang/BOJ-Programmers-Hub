@@ -75,12 +75,5 @@ int main() {
             break;
         }
     }
-
-    for (int i = 0; i < 3; i++) {
-        if (sum[i] == '0') {
-
-        }
-    }
-
     cout << sum;
 }
