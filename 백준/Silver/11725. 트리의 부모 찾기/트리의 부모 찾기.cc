@@ -12,7 +12,7 @@ void bfs(){
         q.pop();
         for(int i=0;i<v[curr].size();i++){
             int next=v[curr][i];
-            if(parent[curr]==next)continue;
+            if(parent[curr]==next)continue;//이미 탐색한거 패스
             q.push(next);
             parent[next]=curr;
         }
@@ -31,3 +31,9 @@ int main(){
     bfs();
     for(int i=2;i<=N;i++)cout<<parent[i]<<"\n";
 }
+/*
+     1 
+  6    4
+ 3    7  2
+5  
+*/
