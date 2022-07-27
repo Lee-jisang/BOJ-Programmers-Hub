@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <regex>
 using namespace std;
@@ -12,7 +11,6 @@ int main() {
 	cin >> s;
 
 	int cnt = 0;
-
 	if (s.find("L") == string::npos) {// not find
 		cout << N;
 		return 0;
@@ -29,9 +27,4 @@ int main() {
 		}
 	}
 	cout << cnt;
-
-
-	//while (s.find("..") != string::npos)  //..가 없을때까지	
-	//	s = regex_replace(s, regex("\\.\\."), "."); //정규식에 맞춰줘야함
-
 }
