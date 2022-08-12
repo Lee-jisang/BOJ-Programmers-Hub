@@ -1,46 +1,30 @@
-#include <iostream>
-#include <list>
+#include <iostream> 
+#include <list> 
 using namespace std;
 
-int main(void) {
-
-    int t;
-    cin >> t;
-
-    while (t--) {
-        list<char> listChar;
-        
-        string key;
-        cin >> key;
-
-        auto it = listChar.begin();
-
-        for (int i = 0; i < key.size(); i++) {
-            if (key[i] == '<') {
-                if (it != listChar.begin()) {
-                    it--;
-                }
+int main() {
+    int T;
+    cin >> T;
+    for (int i = 0; i < T; i++) {
+        list<char> key;
+        string a;
+        cin >> a;
+        auto it = key.begin();
+        for (int j = 0; j < a.length(); j++) {  
+            if (a[j] == '>') {
+                if (it != key.end()) it++;
             }
-            else if (key[i] == '>') {
-                if (it != listChar.end()) {
-                    it++;
-                }
+            else if (a[j] == '<') {
+                if (it != key.begin()) it--;
             }
-            else if (key[i] == '-') {
-                if (it != listChar.begin()) {
-                    it = listChar.erase(--it);
-                }
+            else if (a[j] == '-') {
+                if (it != key.begin()) it = key.erase(--it);
             }
-            else {
-                listChar.insert(it, key[i]);
-            }
+            else  key.insert(it, a[j]);   
         }
-        for (it = listChar.begin(); it != listChar.end(); it++) {
-            cout << *it;
+        for (auto iter = key.begin(); iter != key.end(); iter++) {
+            cout << *iter;
         }
-        cout << '\n';
-
+        cout << "\n";
     }
-
-    return 0;
 }
