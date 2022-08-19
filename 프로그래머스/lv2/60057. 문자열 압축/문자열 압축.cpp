@@ -7,7 +7,7 @@ int solution(string s) {
     if(s.length()==1){
         return 1;
     }
-    int k=0;
+    //int k=0;
     int min=1001;
     for(int i=s.length()/2; i>=1; i--){   
         vector<string> v;
