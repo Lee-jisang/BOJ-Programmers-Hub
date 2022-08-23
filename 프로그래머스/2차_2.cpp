@@ -34,3 +34,34 @@ int solution(vector<int> topping) {
     }
     return answer;
 }
+
+//시간초과 2
+#include <string>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <unordered_set>
+
+using namespace std;
+
+int solution(vector<int> topping) {
+    int answer = 0;
+
+    for(int i=0; i<=topping.size()-2; i++){
+        unordered_set<int> v1;
+        unordered_set<int> v2;
+        for(int j=0; j<=i; j++){
+            v1.insert(topping[j]);
+        }
+        //sort(v1.begin(), v1.end());
+        //v1.erase(unique(v1.begin(), v1.end()),v1.end());
+        for(int j=i+1; j<=topping.size()-1; j++){
+            v2.insert(topping[j]);
+        }
+        //sort(v2.begin(), v2.end());
+        //v2.erase(unique(v2.begin(), v2.end()),v2.end());
+        if(v1.size()==v2.size())
+            answer++;
+    }
+    return answer;
+}
