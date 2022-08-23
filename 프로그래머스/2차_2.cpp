@@ -7,7 +7,7 @@
 using namespace std;
 
 int solution(vector<int> topping) {
-    int answer = 0;
+    int answer = 0; 
     string s="";
     for(int i=0; i<topping.size(); i++){
         s+=to_string(topping[i]);
