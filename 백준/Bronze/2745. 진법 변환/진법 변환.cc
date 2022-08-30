@@ -1,34 +1,24 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	
-	string n;
-	int b , result = 0;
-	
-	cin >> n >> b;
-	
-	int len = n.length();
-	int tmp = 1;
-	
-	for(int i=len-1; i>=0; i--) {
-		int num;
-		
-		if(n[i] >= '0' && n[i] <= '9') {
-			num = n[i] - '0';
+	string s;
+	int n;
+	cin >> s >> n;
+	int sum = 0;
+	for (int i = s.length()-1; i >= 0; i--) {
+		//cout << s[i] << " "<< i;
+
+		if (s[i] <= 'Z' && s[i] >= 'A') {
+			sum += (s[i] - 'A'+10) * pow(n, s.length()-1 - i);
 		}
 		else {
-			num = n[i] - 'A' + 10;
+			sum += (s[i] -'0') * pow(n, s.length()-1 - i);
 		}
-		
-		num *= tmp;
-		result += num;
-		tmp *= b;		
+
+	
 	}
-	
-	cout << result << '\n';
-	
-	return 0;
+
+	cout << sum;
 }
