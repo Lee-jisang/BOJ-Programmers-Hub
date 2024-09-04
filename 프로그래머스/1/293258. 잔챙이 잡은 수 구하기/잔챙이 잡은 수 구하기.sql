@@ -4,5 +4,5 @@
 
 select count(*) as FISH_COUNT
 from fish_info
-where length <= 10.0 || length is null #float type 일때 조건
+where length is null #float type 일때 조건
 ;
